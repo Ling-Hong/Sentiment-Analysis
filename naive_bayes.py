@@ -1,6 +1,6 @@
 """
 Created on 2018-10-27 19:12:18
-@author: Lynn.H
+@author: Ling Hong
 @description:
 a naive bayes classifier for sentiment analysis (binary)
 
@@ -9,6 +9,7 @@ To improve the performance
 - add geometric features
 - hard-code rules
 
+Reference:
 https://www.analyticsvidhya.com/blog/2018/04/a-comprehensive-guide-to-understand-and-implement-text-classification-in-python/
 """
 
@@ -194,13 +195,13 @@ def main():
         f.write("recall for blue\n")
         f.write(str(round(blue_recall2,1)))
 
-    # with open('result_detail1.txt','w') as f:
-    #     for s in test_result_detailed1:
-    #         f.write("label: {} red_prob: {} blue_prob: {} diff: {}\n".format(s[0], s[1], s[2], abs(s[2]-s[1])))
-    #
-    # with open('result_detail2.txt', 'w') as f:
-    #     for s in test_result_detailed2:
-    #         f.write("label: {} red_prob: {} blue_prob: {} diff: {}\n".format(s[0], s[1], s[2], abs(s[2]-s[1])))
+    with open('result_detail1.txt','w') as f:
+        for s in test_result_detailed1:
+            f.write("label: {} red_prob: {} blue_prob: {} diff: {}\n".format(s[0], s[1], s[2], abs(s[2]-s[1])))
+    
+    with open('result_detail2.txt', 'w') as f:
+        for s in test_result_detailed2:
+            f.write("label: {} red_prob: {} blue_prob: {} diff: {}\n".format(s[0], s[1], s[2], abs(s[2]-s[1])))
 
 
 if __name__ == "__main__":
